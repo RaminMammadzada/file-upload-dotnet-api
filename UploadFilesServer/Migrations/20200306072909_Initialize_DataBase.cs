@@ -12,7 +12,6 @@ namespace UploadFilesServer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
                     FilePath = table.Column<string>(nullable: true),
                     FileSize = table.Column<int>(nullable: true),
                     FileName = table.Column<string>(nullable: true),

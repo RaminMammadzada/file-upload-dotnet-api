@@ -3,6 +3,7 @@
 
 - Clone the repo by typing
 - Open the project in Visual Studio ( possibly 2019 version).
+- Make sure you have `SQL Server 2019` installed and started in your local machine.
 - Run `Update-Database` in Package Manager Console.
 - Run the app by using Start Debugging button ( F5 is shortcut.)
 
