@@ -1,0 +1,4 @@
+.vs
+UploadFilesServer/bin
+UploadFilesServer/obj
+UploadFilesServer/StaticFiles/Images/*
