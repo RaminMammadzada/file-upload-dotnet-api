@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using UploadFilesServer.Context;
 using UploadFilesServer.Models;
+using UploadFilesServer.Data;
 
 namespace UploadFilesServer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FilesController : ControllerBase
+    public class FileItemsController : ControllerBase
     {
-        private readonly FileContext _context;
 
-        public FilesController(FileContext context)
+    private readonly DataContext _context;
+
+        public FileItemsController(DataContext context)
         {
             _context = context;
         }
@@ -24,7 +25,7 @@ namespace UploadFilesServer.Controllers
         {
             try
             {
-                var files = _context.Files.ToList();
+                var files = _context.FileItems.ToList();
 
                 return Ok(files);
             }

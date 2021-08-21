@@ -15,7 +15,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using UploadFilesServer.Context;
+
+using UploadFilesServer.Extensions;
+// using UploadFilesServer.Context;
 
 namespace UploadFilesServer
 {
@@ -26,13 +28,15 @@ namespace UploadFilesServer
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set;}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<FileContext>(opts =>
-               opts.UseSqlServer(Configuration["sqlconnection:connectionString"]));
+            // services.AddDbContext<FileContext>(opts =>
+            //    opts.UseSqlServer(Configuration["sqlconnection:connectionString"]));
+
+            services.AddApplicationServices(Configuration);
 
             services.AddCors(options =>
             {
