@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using UploadFilesServer.Models;
 using UploadFilesServer.Data;
+using UploadFilesServer.Entities;
 
 namespace UploadFilesServer.Controllers
 {
@@ -36,13 +36,13 @@ namespace UploadFilesServer.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateFile([FromBody]File file)
+        public IActionResult CreateFile([FromBody]FileItem fileItem)
         {
             try
             {
-                if (file == null)
+                if (fileItem == null)
                 {
-                    return BadRequest("File object is null");
+                    return BadRequest("FileItem object is null");
                 }
 
                 if (!ModelState.IsValid)
@@ -50,8 +50,8 @@ namespace UploadFilesServer.Controllers
                     return BadRequest("Invalid model object");
                 }
 
-                file.Id = Guid.NewGuid();
-                _context.Add(file);
+                fileItem.Id = Guid.NewGuid();
+                _context.Add(fileItem);
                 _context.SaveChanges();
 
                 return StatusCode(201);
