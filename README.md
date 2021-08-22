@@ -5,17 +5,17 @@ This is frontend application of the home task for the company Flying Donkey.
 
 The following tasks are done:
 
-[x] File size and file types that can be uploaded to the server must be configurable. Validation for invalid data should present.
+- [x] File size and file types that can be uploaded to the server must be configurable. Validation for invalid data should present.
 
-[ ] Add at least two unit tests for the back-end. Tests must have positive and negative scenarios. Default tests added by angular cli will be ignored during the task evaluation.
+- [ ] Add at least two unit tests for the back-end. Tests must have positive and negative scenarios. Default tests added by angular cli will be ignored during the task evaluation.
 
-[x] API must have layered architecture, code must follow common style guides and development principles.
+- [x] API must have layered architecture, code must follow common style guides and development principles.
 
-[x] File size and file types that can be uploaded to the server must be configurable. Validation for invalid data should present.
+- [x] File size and file types that can be uploaded to the server must be configurable. Validation for invalid data should present.
 
-[x] Feel free to choose any storage for uploaded files (it can be DB/File System/etc.) The only requirement here - storage must be persistent during runtime
+- [x] Feel free to choose any storage for uploaded files (it can be DB/File System/etc.) The only requirement here - storage must be persistent during runtime
 
-[ ] File download/preview is not required but would be good if implemented.
+- [ ] File download/preview is not required but would be good if implemented.
 
 
 ### Setup
