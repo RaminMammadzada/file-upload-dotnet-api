@@ -1,5 +1,5 @@
 
-### Simple File Uploader with Angular 
+### Simple File Uploader with .Net Core 
 
 This is a backend application of the home task for the company Flying Donkey. 
 
@@ -31,7 +31,7 @@ The tasks that are needed to be done:
 ## Built with the following tech stack
 
 - [.Net Core](https://dotnet.microsoft.com/download)
-- [Entity Framework](https://docs.microsoft.com/en-us/ef/)
+- [SQLite](sqlite.org/index.html)
 
 ## Author
 
