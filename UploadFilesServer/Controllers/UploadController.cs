@@ -16,7 +16,7 @@ namespace UploadFilesServer.Controllers
       try
       {
         var file = Request.Form.Files[0];
-        var folderName = Path.Combine("StaticFiles", "Images");
+        var folderName = Path.Combine("StaticFiles", "Files");
         var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
 
         Console.WriteLine(file);
@@ -24,7 +24,8 @@ namespace UploadFilesServer.Controllers
         {
           var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
 
-          var supportedTypes = new[] { "jpg", "jpeg", "txt", "doc", "docx", "pdf", "xls", "xlsx" };
+          // File type validation
+          var supportedTypes = new[] { "png", "jpg", "html", "jpeg", "txt", "pdf" };
           var fileExt = System.IO.Path.GetExtension(file.FileName).Substring(1);
           if (!supportedTypes.Contains(fileExt))
           {
@@ -32,6 +33,7 @@ namespace UploadFilesServer.Controllers
             return BadRequest(ErrorMessage);
           }
 
+          // File size validation
           var fileSizeLimit = 5 * 1024 * 1024;
           var fileSize = file.Length;
           if (fileSize > fileSizeLimit)

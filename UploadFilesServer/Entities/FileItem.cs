@@ -15,7 +15,8 @@ namespace UploadFilesServer.Entities
     [Required]
     public string FileName { get; set; }
     [Required]
-    public string FileType{ get; set; }
+    public string FileType { get; set; }
+    [Required]
     public DateTime UploadDate { get; set; }
   }
 }

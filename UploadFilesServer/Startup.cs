@@ -17,7 +17,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 using UploadFilesServer.Extensions;
-// using UploadFilesServer.Context;
 
 namespace UploadFilesServer
 {
@@ -30,11 +29,9 @@ namespace UploadFilesServer
 
         public IConfiguration Configuration { get; set;}
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // Method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddDbContext<FileContext>(opts =>
-            //    opts.UseSqlServer(Configuration["sqlconnection:connectionString"]));
 
             services.AddApplicationServices(Configuration);
 
@@ -56,7 +53,7 @@ namespace UploadFilesServer
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
