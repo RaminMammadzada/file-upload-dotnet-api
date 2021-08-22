@@ -1,9 +1,9 @@
 
 ### Simple File Uploader with Angular 
 
-This is frontend application of the home task for the company Flying Donkey. 
+This is a backend application of the home task for the company Flying Donkey. 
 
-The following tasks are done:
+The tasks that are needed to be done:
 
 - [x] File size and file types that can be uploaded to the server must be configurable. Validation for invalid data should present.
 
