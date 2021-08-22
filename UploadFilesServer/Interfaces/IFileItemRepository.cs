@@ -7,9 +7,7 @@ namespace UploadFilesServer.Interfaces
 {
   public interface IFileItemRepository
   {
-    // Task<bool> SaveAllAsync();
-    // Task<FileItemDto> GetFileItemByIdAsync(int id);
+    Task<bool> SaveAllAsync();
     // Task<IEnumerable<FileItemDto>> GetFileItemsAsync();
-    // Task<FileItemDto> GetFileItemAsync(string username);
   }
 }

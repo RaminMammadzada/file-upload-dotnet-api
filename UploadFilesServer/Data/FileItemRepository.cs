@@ -20,34 +20,16 @@ namespace UploadFilesServer.Data
       _context = context;
     }
 
-    // public async Task<FileItemDto> GetFileItemAsync(string username)
-    // {
-    //   return await _context.FileItems
-    //           .Where(x => x.UserName == username)
-    //           .ProjectTo<FileItemDto>(_mapper.ConfigurationProvider)
-    //           .SingleOrDefaultAsync();
-    // }
+    public async Task<IEnumerable<FileItemDto>> GetFileItemsAsync()
+    {
+      return await _context.FileItems
+                .ProjectTo<FileItemDto>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+    }
 
-    // public async Task<IEnumerable<FileItemDto>> GetFileItemsAsync()
-    // {
-    //   return await _context.FileItems
-    //             .ProjectTo<FileItemDto>(_mapper.ConfigurationProvider)
-    //             .ToListAsync();
-    // }
-
-    // public async Task<FileItemDto> GetFileItemByIdAsync(int id)
-    // {
-    //   return await _context.FileItems.FindAsync(id);
-    // }
-
-    // public async Task<bool> SaveAllAsync()
-    // {
-    //   return await _context.SaveChangesAsync() > 0;
-    // }
-
-    // public void Update(FileItem fileItem)
-    // {
-    //   _context.Entry(user).State = EntityState.Modified;
-    // }
+    public async Task<bool> SaveAllAsync()
+    {
+      return await _context.SaveChangesAsync() > 0;
+    }
   }
 }
